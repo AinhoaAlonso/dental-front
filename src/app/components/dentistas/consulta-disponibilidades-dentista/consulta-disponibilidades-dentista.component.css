@@ -1,0 +1,104 @@
+.main-update-professional-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+input[type="date"],
+select {
+  display: block;
+  margin-top: 0.3rem;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 300px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--text-color);
+  font-family: inherit;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: rgba(0, 195, 178, 0.08);
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  justify-content: center;
+}
+
+.error {
+  color: #b71c1c;
+  margin-top: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Colores por estado de disponibilidad */
+.estado-libre {
+  background-color: rgba(0, 200, 0, 0.2) !important;
+}
+
+.estado-reservado {
+  background-color: rgba(255, 0, 0, 0.2) !important;
+}
+
+.estado-no-disponible {
+  background-color: rgba(0, 0, 255, 0.2) !important;
+}
+
+.snackbar-success {
+  background-color: #4caf50;
+  color: white;
+}
+
+.snackbar-error {
+  background-color: #f44336;
+  color: white;
+}

@@ -1,0 +1,33 @@
+<div class="historial-container">
+  <h3>🦷 Historial de Citas del Paciente</h3>
+
+  <div *ngIf="loading" class="loading">
+    <mat-spinner diameter="30"></mat-spinner>
+    <span>Cargando historial...</span>
+  </div>
+  <div *ngIf="error">{{ error }}</div>
+
+  <table *ngIf="!loading && !error && citas.length > 0">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Profesional</th>
+        <th>Tratamiento</th>
+        <th>Motivo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cita of citas" [ngClass]="getEstadoClass(cita.estado)">
+        <td>{{ formatFecha(cita.fecha_cita) }}</td>
+        <td>{{ formatHora(cita.hora_inicio) }}</td>
+        <td>{{ cita.profesional }}</td>
+        <td>{{ cita.tratamiento }}</td>
+        <td>{{ cita.motivo_cancelacion }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="!loading && citas.length === 0">No hay citas registradas.</p>
+</div>
+

@@ -1,0 +1,57 @@
+<div class="main-update-professional-container">
+  <h2>Disponibilidades {{ nombreProfesional }} - Fecha: {{ date | date:'dd/MM/yyyy' }}</h2>
+  <div class="filtros-disponibilidad">
+    <div class="filtro-periodo">
+      <label for="periodo">Periodo:</label>
+      <select id="periodo" [(ngModel)]="filtroPeriodo" class="select-filtro">
+        <option value="todos">Todos</option>
+        <option value="mañana">Mañana</option>
+        <option value="tarde">Tarde</option>
+      </select>
+    </div>
+
+    <div class="filtro-estado">
+      <label for="estado">Estado:</label>
+      <select id="estado" [(ngModel)]="filtroEstado" class="select-filtro">
+        <option value="todos">Todos</option>
+        <option *ngFor="let estado of statusValues" [value]="estado">{{ estado }}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- 🔄 Spinner de carga -->
+  <div *ngIf="loading" class="loading">
+    <mat-spinner diameter="30"></mat-spinner>
+    <span>Cargando disponibilidades...</span>
+  </div>
+
+  <table class="professional-table" *ngIf="!loading && filtrarDisponibilidades().length > 0; else sinDatos">
+    <thead>
+      <tr>
+        <th>Hora</th>
+        <th>Periodo</th>
+        <th>Estado</th>
+        <th>Cambiar estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of filtrarDisponibilidades()" [ngClass]="getEstadoClass(a.status)">
+        <td>{{ formatHour(a.slot.startTime) }} - {{ formatHour(a.slot.endTime) }}</td>
+        <td>{{ a.slot.period }}</td>
+        <td>{{ a.status }}</td>
+        <td>
+          <select [value]="a.status" (change)="updateStatus(a.id, $any($event.target).value)">
+            <option>-</option>
+            <option *ngFor="let status of statusValues" [value]="status">{{ status }}</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #sinDatos>
+    <div class="sin-datos-container">
+      <p>No hay disponibilidades para mostrar.</p>
+    </div>
+  </ng-template>
+</div>
+

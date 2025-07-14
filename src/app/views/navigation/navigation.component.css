@@ -1,0 +1,51 @@
+.main-container-navigation{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr;
+  align-items: center;
+  margin-right: 36px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 110px;
+  background: rgb(249,249, 249);
+}
+
+.logo-wrapper-navigation{
+  img{
+    width: 200px;
+  }
+}
+.menu-wrapper-navigation{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    margin-left: 20px;
+    justify-items: center;
+    p{
+      font-size: 1.2rem;
+      color: var(--primary-color);
+    }
+}
+
+.login-wrapper-navigation{
+  text-align: right;
+  button {
+    background-color:var(--primary-color);
+    color: var(--text-color-light);
+    border: none;
+    border-radius: 999px; /* Botón completamente redondeado */
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+  }
+}
+
+.login-wrapper-navigation button:hover {
+  background-color: var(--secondary-color); /* Un tono más oscuro al pasar el mouse */
+}
+
+

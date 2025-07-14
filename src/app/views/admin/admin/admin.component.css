@@ -1,0 +1,82 @@
+/* Reset de márgenes y rellenos */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Contenedor principal */
+.main-container-admin {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+
+/* Barra de navegación superior */
+.top-admin-wrapper {
+  top: 0;
+  left: 0;
+  width: 100%;
+  /*background: linear-gradient(145deg, var(--secondary-color), var(--primary-color));*/
+  padding: 8px 0;
+  z-index: 1000;
+  /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+}
+
+/* Lista de menús */
+.menu-list {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Enlaces del menú */
+.menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*padding: 12px 20px;*/
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-color);
+  text-decoration: none;
+  /*background: var(--secondary-color);*/
+  transition: background 0.2s, color 0.2s;
+}
+
+li.router-link-active{
+  color: var(--primary-color, #00c3b2);
+  box-shadow: inset 4px 0 0 var(--background-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+.menu-link:hover {
+  /*background: var(--background-color);*/
+  color: var(--primary-color);
+}
+
+/* Contenido principal */
+.bottom-admin-wrapper {
+  /*background: var(--background-color);*/
+  flex-grow: 1;
+  overflow-y: auto;
+}
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .menu-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-link {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+

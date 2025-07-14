@@ -1,0 +1,237 @@
+.main-update-professional-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.semana-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+.semana-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.semana-btn:hover:not(:disabled) {
+  background-color: var(--secondary-color);
+}
+
+.semana-btn:disabled {
+  background-color: rgba(0, 195, 178, 0.3);
+  cursor: not-allowed;
+}
+
+.rango-semana {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--text-color);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0, 195, 178, 0.2);
+  padding-bottom: 0.25rem;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.error {
+  color: #b71c1c;
+  font-weight: bold;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+tr:hover {
+  background-color: rgba(0, 195, 178, 0.08);
+}
+
+.paciente-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 14px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.2);
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.detalle-btn {
+  padding: 4px;
+  border: 1px solid black;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.detalle-btn:hover {
+  background-color: #ffffff;
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+p {
+  margin-top: 1rem;
+  font-style: italic;
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* Colores por estado de cita */
+.estado-confirmada {
+  background-color: rgba(0, 180, 100, 0.15) !important;
+}
+
+.estado-anulada {
+  background-color: rgba(200, 50, 50, 0.15) !important;
+}
+
+.estado-pendiente {
+  background-color: rgba(255, 165, 0, 0.15) !important; /* naranja claro */
+}
+
+.estado-realizada {
+  background-color: rgba(0, 195, 178, 0.1) !important; /* tono del primary-color */
+}
+
+.realizar-btn {
+  padding: 6px 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.realizar-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.cancelar-btn {
+  padding: 6px 10px;
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.cancelar-btn:hover {
+  background-color: #c62828;
+}
+
+.mensaje-vacio {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: rgba(255, 235, 59, 0.1); /* amarillo suave */
+  color: #444;
+  text-align: center;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icono-vacio {
+  color: #f57c00; /* naranja oscuro */
+  font-size: 28px;
+}
+
+.dias-semana-selector {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.dias-semana-selector button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.dias-semana-selector button.activo {
+  background-color: var(--primary-color);
+  color: white;
+}
+

@@ -1,0 +1,19 @@
+<div class="main-update-professional-container">
+
+  <label for="fechaLimite">Eliminar todas las disponibilidades anteriores a</label>
+  <input type="date" id="fechaLimite" [(ngModel)]="fechaLimite" />
+
+  <!-- Botón deshabilitado mientras carga -->
+  <button (click)="limpiar()" class="accion-btn" [disabled]="loading">
+    <i class="fa-solid fa-trash"></i> Limpiar Disponibilidades
+  </button>
+
+  <!-- Spinner -->
+  <div *ngIf="loading" class="loading">
+    <mat-spinner diameter="30"></mat-spinner>
+    <span>Eliminando disponibilidades...</span>
+  </div>
+
+</div>
+
+

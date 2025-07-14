@@ -1,0 +1,37 @@
+<div class="main-container-admin">
+  <nav class="top-admin-wrapper">
+    <ul class="menu-list">
+      <li routerLinkActive="router-link-active" class="menu-link">
+        <a [routerLink]="['/admin/appointments-dashboard']" class="card card-blue menu-link">
+          <span class="menu-link">Reservas</span>
+        </a>
+      </li>
+
+      <li routerLinkActive="router-link-active" class="menu-link">
+        <a [routerLink]="['/admin/pacientes']" class="card card-green menu-link">
+          <span class="menu-link">Pacientes</span>
+        </a>
+      </li>
+      <li routerLinkActive="router-link-active" class="menu-link">
+        <a [routerLink]="['/admin/dentistas']" class="card card-purple menu-link">
+          <span class="menu-link">Dentistas</span>
+        </a>
+      </li>
+      <li routerLinkActive="router-link-active" class="menu-link">
+        <a [routerLink]="['/admin/disponibilidades']" class="card card-yellow menu-link">
+          <span class="menu-link">Disponibilidad</span>
+        </a>
+      </li>
+      <li routerLinkActive="router-link-active" class="menu-link">
+        <a [routerLink]="['/admin/tratamientos']" class="card card-yellow menu-link">
+          <span class="menu-link">Tratamientos</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="bottom-admin-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

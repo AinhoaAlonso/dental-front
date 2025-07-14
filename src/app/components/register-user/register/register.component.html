@@ -1,0 +1,45 @@
+<div class="main-container-register">
+
+  <!-- Título dinámico -->
+  <div class="title-wrapper-register">
+    <p *ngIf="currentStep === 1">Registro de Usuario <span class="step-text">Paso 1/2</span></p>
+    <p *ngIf="currentStep === 2">Datos del Profesional <span class="step-text">Paso 2/2</span></p>
+  </div>
+
+  <!-- Paso 1: Formulario de usuario -->
+  <div class="body-wrapper-register" *ngIf="currentStep === 1">
+    <input type="email" name="email" placeholder="Email ID" [(ngModel)]="credentials.username_users" required>
+    <input type="password" name="password" placeholder="Password" [(ngModel)]="credentials.password_users" required>
+
+    <select name="rol" id="rol" [(ngModel)]="credentials.rol_users" required>
+      <option value="" disabled selected>Selecciona un rol</option>
+      <option *ngFor="let rol of roles" [value]="rol">{{ rol }}</option>
+    </select>
+
+    <button (click)="registerNewUser()">Continuar</button>
+
+    <div *ngIf="messageRegister" class="message-success">{{ messageRegister }}</div>
+    <div *ngIf="errorRegister" class="message-error">{{ errorRegister }}</div>
+  </div>
+
+  <!-- Paso 2: Formulario de profesional -->
+  <div class="body-wrapper-register" *ngIf="currentStep === 2">
+    <input type="text" placeholder="NIF" [(ngModel)]="professional.nif_professionals">
+    <input type="text" placeholder="Número de Licencia" [(ngModel)]="professional.license_number_professionals">
+    <input type="text" placeholder="Nombre" [(ngModel)]="professional.name_professionals">
+    <input type="text" placeholder="Apellido" [(ngModel)]="professional.last_name_professionals">
+    <input type="text" placeholder="Teléfono" [(ngModel)]="professional.phone_professionals">
+    <input type="email" placeholder="Email" [(ngModel)]="professional.email_professionals" [readonly]="formDisabled" [ngClass]="{'disabled-input': formDisabled}">
+    <!--<input type="text" placeholder="Sala Asignada" [(ngModel)]="professional.assigned_room_professionals">
+
+    <label>
+      <input type="checkbox" [checked]="professional.is_active_professionals === true">
+      Activo
+    </label>-->
+
+    <button (click)="newProfessional()">Guardar Profesional</button>
+    <div *ngIf="messageNewProfessional" class="message-success">{{ messageNewProfessional }}</div>
+    <div *ngIf="errorNewProfessional" class="message-error">{{ errorNewProfessional }}</div>
+  </div>
+
+</div>
